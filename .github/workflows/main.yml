@@ -35,7 +35,7 @@ jobs:
       steps:
       - uses: actions/checkout@v2
       - name: Slack Notifications
-        uses: rtcamp/action-slack-notify@master
+        uses: rtcamp/action-slack-notify@v2
         env:
            SLACK_WEBHOOK: $ {{secrets.SLACK_WEBHOOK}}
            SLACK_TITLE: Slack Notifications

@@ -26,3 +26,16 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+  
+  Slack_notify:
+      runs-on: self-hosted
+      if: always()
+      needs: [build,runCommands]
+      steps:
+      - name: Slack Notifications
+        uses: rtcamp/action-slack-notify@master
+        env:
+           SLACK_WEBHOOK: $ {{secrets.SLACK_WEBHOOK}}
+           SLACK_TITLE: Slack Notifications
+           SLACK_USERNAME: SLACK BOT
+           SLACK_MESSAGE: Triggered by Github Actions 1) build ${{needs.build.result}} 2) runCommands ${{needs.runCommands.result}}

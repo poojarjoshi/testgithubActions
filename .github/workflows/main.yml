@@ -32,6 +32,7 @@ jobs:
       if: always()
       needs: [build,runCommands]
       steps:
+      - uses: actions/checkout@v2
       - name: Slack Notifications
         uses: rtcamp/action-slack-notify@master
         env:

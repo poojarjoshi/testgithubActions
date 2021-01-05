@@ -37,7 +37,7 @@ jobs:
       - name: Slack Notifications
         uses: rtcamp/action-slack-notify@v2
         env:
-           SLACK_WEBHOOK: $ {{secrets.SLACK_WEBHOOK}}
+           SLACK_WEBHOOK: ${{secrets.SLACK_WEBHOOK}}
            SLACK_TITLE: Slack Notifications
            SLACK_USERNAME: SLACK BOT
            SLACK_MESSAGE: Triggered by Github Actions 1) build ${{needs.build.result}} 2) runCommands ${{needs.runCommands.result}}

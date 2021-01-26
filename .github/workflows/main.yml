@@ -23,9 +23,12 @@ jobs:
       needs: build
       steps:
       - name: Run a multi-line script
+        env: 
+          test: ${{ secrets.test }} 
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          echo $test
           
   
  

@@ -27,8 +27,8 @@ jobs:
           test: ${{ secrets.test }} 
         run: |
           echo Add other actions to build,
-          echo test, and deploy your project.
-          echo $test
+          echo this is test, and deploy your project.
+          echo  value is $test
           
   
  

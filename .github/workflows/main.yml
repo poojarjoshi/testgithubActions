@@ -11,14 +11,14 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu
     steps:
       - uses: actions/checkout@v2
       - name: Run a one-line script
         run: echo Hello, world!
   
   runCommands:
-      runs-on: self-hosted
+      runs-on: ubuntu
       #Sequential run
       needs: build
       steps:
